@@ -1,0 +1,50 @@
+<h3>Update</h3>
+<div style="width: 400px;">
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()" #f="ngForm"  name="addForm" novalidate>
+    <div class="form-group">
+        <label for="surface_couvert">surface_couvert</label>
+        <input type="text" class="form-control" id="surface_couvert" (change)="onSubmit2()" required [(ngModel)]="article.surface_couvert" formControlName="surface_couvert" name="surface_couvert">
+      </div>
+      <div  style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;" >
+        <label for="categorie_TIB">categorie_TIB</label>
+     
+      <input type="text" class="form-control" id="categorie_TIB" required [(ngModel)]="article.categorie_TIB" formControlName="categorie_TIB" name="{{this.categorie}}" 
+       value="{{this.m}}" >
+      </div>
+      <div class="form-group">
+        <label for="code_article">code_article</label>
+        <input type="text" class="form-control"  id="code_article" (change)="currentDate()" required [(ngModel)]="article.code_article" formControlName="code_article" name="code_article">
+      </div>
+    
+      <div class="form-group">
+        <label for="website">prestations</label>
+        <div *ngFor="let web of websiteList">
+          <label>
+            <input type="checkbox" [value]="web.name" name="web.name" (change)="onCheckboxChange($event, web.name)" />
+            {{web.name}}
+          </label>
+        </div>
+    </div>
+  
+  
+    <div  style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;" >
+      
+      <label for="prestation">prestation</label>
+      <input  [(ngModel)]="articlea.prestation"  type="text" formControlName="prestation"  name="{{this.str}}" class="form-control"
+      value="{{this.str}}" >
+    </div>
+    <div  style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;" >>
+      <label for="montant_taxe">montant_taxe</label>
+      <input type="number"  formControlName="montant_taxe" placeholder="montant_taxe" name="{{this.taxe}}" class="form-control"
+      value="{{this.taxe}}" [(ngModel)]="article4.prestation5" id="montant_taxe">
+    </div>
+
+    <div class="form-group">
+      <label for="date_dernier_maj">date_dernier_maj</label>
+      <input type="date"  formControlName="date_dernier_maj" required [(ngModel)]="article.date_dernier_maj" placeholder="date_dernier_maj" name="date_dernier_maj" class="form-control"
+            id="date_dernier_maj">
+    </div>
+
+    <button type="submit"   class="btn btn-success">Submit</button>
+  </form>
+</div>

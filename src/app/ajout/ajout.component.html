@@ -1,0 +1,110 @@
+<div class="body">
+  <div class="container">
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+       <img src="assets/vf1.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Nous souhaite<br> satisfaire nos clients</span>
+          <span class="text-2">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back">
+       <img class="backImg" src="assets/ai2.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Add Article</div>
+            <form [formGroup]="addForm" (ngSubmit)="onSubmit()" #f="ngForm"  name="addForm" novalidate>
+            <div class="input-boxes">
+              <div class="input-box">
+               
+                <input type="text" (change)="onSubmit4()" formControlName="code_article" placeholder="code_article" name="code_article" class="form-control"
+                id="code_article">
+              </div>
+              <div class="input-box">
+                <input type="number" formControlName="agent_saisie"  value="{{this.login}" placeholder="agent_saisie" name="agent_saisie" class="form-control"
+                id="agent_saisie">
+              </div>
+
+              <div class="input-box">
+                <input type="date"  formControlName="date_creation"  placeholder="date_creation" name="date_creation" class="form-control"
+                id="date_creation">
+              </div>
+              <div class="input-box">
+                <input type="date" formControlName="date_debut_imposition" placeholder="date_debut_imposition" name="date_debut_imposition" class="form-control"
+                id="date_debut_imposition">
+              </div>
+              <div style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;">
+                <label for="taux_prestation">taux_prestation</label>
+                <input type="number" formControlName="taux_prestation" placeholder="taux_prestation" name="{{this.taux}}" class="form-control"
+                value="{{this.taux}}"  [(ngModel)]="article1.prestation2" id="taux_prestation">
+              </div>
+             
+              <div style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;">
+                <label for="categorie_TIB">categorie_TIB</label>
+                <input type="text"  formControlName="categorie_TIB" [(ngModel)]="article2.prestation3" placeholder="categorie_TIB" name="{{this.categorie}}" class="form-control"
+                value="{{this.categorie}}"   id="categorie_TIB">
+              </div>
+          
+             
+              <div class="input-box">
+                <input type="number" (change)="onSubmit1()" formControlName="surface_couvert" placeholder="surface_couvert" name="surface_couvert" class="form-control"
+             id="surface_couvert">
+              </div>
+            
+              <div  style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;" >
+                <label for="montant_taxe">montant_taxe</label>
+                <input type="number"  formControlName="montant_taxe" placeholder="montant_taxe" name="{{this.taxe}}" class="form-control"
+                value="{{this.taxe}}" [(ngModel)]="article4.prestation5" id="montant_taxe">
+              </div>
+          
+           
+              
+              <div class="input-box">
+                <input type="text" formControlName="code_commune" value="{{this.code_commune}}" placeholder="code_commune" name="code_commune" class="form-control"
+             id="code_commune">
+              </div>
+              <div class="form-group">
+                <h6>Choisir la prestation convenable : </h6>
+                <br>
+                <div *ngFor="let web of websiteList">
+                  <label>
+                    <input type="checkbox" [value]="web.name" name="web.name" (change)="onCheckboxChange($event, web.name)" />
+                    {{web.name}}
+                  </label>
+                </div>
+            </div>
+            
+  <div  style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;" >
+    
+    <label for="prestation">prestation</label>
+    <input  [(ngModel)]="article.prestation"  type="text" formControlName="prestation"  name="{{this.str}}" class="form-control"
+    value="{{this.str}}" >
+  </div>
+  <div  style="height: 0; width:0; background-color:#FFDDDD; position: absolute; left: -9999px;" >
+                <input type="date" formControlName="date_dernier_maj" placeholder="date_dernier_maj" name="date_dernier_maj" class="form-control"
+                id="date_dernier_maj">
+              </div>
+            
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+             
+            </div>
+        </form>
+      </div>
+       
+    </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+/*.card{
+position: relative;
+width: 600 px;
+
+display: flex;
+justify-content: fext-start;
+align-items: center;
+border-radius: 20px;
+background: linear-gradient(135deg,#8096e3,#8000e3);
+}
+
+.card-body{
+    position: relative;
+width: 800 px;
+
+display: flex;
+justify-content: fext-start;
+align-items: center;
+border-radius: 20px;
+background: linear-gradient(135deg,#8096e3,#8000e3);
+}*/
+

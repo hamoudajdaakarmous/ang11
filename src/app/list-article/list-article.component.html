@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-4" *ngFor="let item of crudApi.listData " style="width: 18rem;">
+    <div class="p-2 mb-2 bg-secondary text-white">
+      <div class="card-body">
+   <h1>Id de l'article</h1>   <h3>{{item.id}}</h3>
+   
+        <ul class="list-group-item">
+    
+           <li class="list-group-item list-group-item-dark">Agent de Saisie {{item.agent_saisie}}</li>
+           <li class="list-group-item list-group-item-dark">La categorieTIB:{{item.categorie_TIB}}</li>
+           <li class="list-group-item list-group-item-dark">Le code d'article:{{item.code_article}}</li>
+           <li class="list-group-item list-group-item-dark">Le Taux de prestation:{{item.taux_prestation}}</li>
+           <li class="list-group-item list-group-item-dark">La surface couvert:{{item.surface_couvert}}</li>
+           <li class="list-group-item list-group-item-dark">Montant de taxe:{{item.montant_taxe}}</li>
+           <li class="list-group-item list-group-item-dark">La date de creation:{{item.date_creation}}</li>
+          
+           <li class="list-group-item list-group-item-dark">Date de debut d'imposition:{{item.date_debut_imposition}}</li>
+           <li class="list-group-item list-group-item-dark">Prestation:{{item.prestation}}</li>
+          </ul>
+         <button (click)="updateArticle(item.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+         <button type="button" class="btn btn-danger" (click) = "removeData(item.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  </div>
