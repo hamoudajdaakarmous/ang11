@@ -1,4 +1,4 @@
-# App1authen
+# App1authen ssr
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
